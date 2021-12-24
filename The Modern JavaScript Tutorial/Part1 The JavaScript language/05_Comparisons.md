@@ -97,7 +97,7 @@ The same thing happens with an empty string:
 alert( '' == false ); // true
 ```
 
-This happens because operands of different types are converted to numbers by the equality operator `==`. An empty string, just like `false`, becomes a zero.
+**This happens because operands of different types are converted to numbers by the equality operator `==`**. An empty string, just like `false`, becomes a zero.
 
 **A strict equality operator `===` checks the equality without type conversion.**
 
@@ -117,7 +117,7 @@ There’s a non-intuitive behavior when `null` or `undefined` are compared to ot
 
 **For a strict equality check** `===`
 
-These values are different, because each of them is a different type.
+**These values are different, because each of them is a different type.**
 
 ```javascript
 alert( null === undefined ); // false
@@ -145,13 +145,13 @@ alert( null == 0 ); // (2) false
 alert( null >= 0 ); // (3) true
 ```
 
-The reason is that an equality check `==` and comparisons `> < >= <=` work differently. Comparisons convert `null` to a number, treating it as `0`. That’s why (3) `null >= 0` is true and (1) `null > 0` is false.
+The reason is that an equality check `==` and comparisons `> < >= <=` work differently. **Comparisons convert `null` to a number, treating it as `0`**. That’s why (3) `null >= 0` is true and (1) `null > 0` is false.
 
-On the other hand, the equality check `==` for `undefined` and `null` is defined such that, without any conversions, they equal each other and don’t equal anything else. That’s why (2) `null == 0` is false.
+On the other hand, the equality check `==` for `undefined` and `null` is defined such that, **without any conversions, they equal each other and don’t equal anything else**. That’s why (2) `null == 0` is false.
 
 **An incomparable undefined**
 
-The value `undefined` shouldn’t be compared to other values:
+**The value `undefined` shouldn’t be compared to other values:**
 
 ```javascript
 alert( undefined > 0 ); // false (1)
@@ -163,8 +163,8 @@ Why does it dislike zero so much? Always false!
 
 We get these results because:
 
-- Comparisons `(1)` and `(2)` return `false` because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.
-- The equality check `(3)` returns `false` because `undefined` only equals `null`, `undefined`, and no other value.
+- Comparisons `(1)` and `(2)` return `false` **because `undefined` gets converted to `NaN` and `NaN` is a special numeric value which returns `false` for all comparisons.**
+- The equality check `(3)` returns `false` **because `undefined` only equals `null`, `undefined`**, and no other value.
 
 **Avoid problems**
 

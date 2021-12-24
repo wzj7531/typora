@@ -43,7 +43,7 @@ let num = Number(str); // becomes a number 123
 alert(typeof num); // number
 ```
 
-if the string is not a valid number, the result of such a conversion is `NaN`. For instance:
+If the string is not a valid number, the result of such a conversion is `NaN`. For instance:
 
 ```javascript
 let age = Number("an arbitrary string instead of a number");
@@ -69,7 +69,7 @@ alert( Number(true) );        // 1
 alert( Number(false) );       // 0
 ```
 
-Please note that `null` and `undefined` behave differently here: `null` becomes zero while `undefined` becomes `NaN`.
+**Please note that `null` and `undefined` behave differently here: `null` becomes zero while `undefined` becomes `NaN`.**
 
 Most mathematical operators also perform such conversion, we’ll see that in the next chapter.
 

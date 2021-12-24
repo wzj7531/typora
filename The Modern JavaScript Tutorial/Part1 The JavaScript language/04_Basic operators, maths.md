@@ -23,7 +23,7 @@ The first four are straightforward, while `%` and `**` need a few words about th
 
 ### Remainder %
 
-The result of `a % b` is the [remainder](https://en.wikipedia.org/wiki/Remainder) of the integer division of `a` by `b`.
+The result of `a % b` is the [remainder](https://en.wikipedia.org/wiki/Remainder) of the **integer division** of `a` by `b`.
 
 ```javascript
 alert( 5 % 2 ); // 1, a remainder of 5 divided by 2
@@ -78,7 +78,7 @@ Here, the first operand is a string, the compiler treats the other two operands 
 
 The plus `+` exists in two forms: the ***binary form*** that we used above and the ***unary form.***
 
-The unary plus or, in other words, the plus operator `+` applied to a single value, doesn’t do anything to numbers. But if the operand is not a number, the unary plus converts it into a number.
+The unary plus or, in other words, the plus operator `+` applied to a single value, doesn’t do anything to numbers. **But if the operand is not a number, the unary plus converts it into a number.**
 
 ```javascript
 // No effect on numbers
@@ -129,7 +129,7 @@ Here’s an extract from the [precedence table](https://developer.mozilla.org/en
 
 ### Assignment
 
-Let’s note that an assignment `=` is also an operator. It is listed in the precedence table with the very low priority of `3`.
+Let’s note that an assignment `=` is also an operator. **It is listed in the precedence table with the very low priority of `3`**.
 
 That’s why, when we assign a variable, like `x = 2 * 2 + 1`, the calculations are done first and then the `=` is evaluated, storing the result in `x`.
 
@@ -143,7 +143,7 @@ alert( x ); // 5
 
 All operators in JavaScript return a value. That’s obvious for `+` and `-`, but also true for `=`.
 
-The call `x = value` writes the `value` into `x` *and then returns it*.
+**The call `x = value` writes the `value` into `x` *and then returns it*.**
 
 ```javascript
 let a = 1;
@@ -171,7 +171,7 @@ alert( c ); // 4
 
 Short “modify-and-assign” operators exist for all arithmetical and bitwise operators. 
 
-Such operators have the same precedence as a normal assignment, so they run after most other calculations:
+**Such operators have the same precedence as a normal assignment, so they run after most other calculations**:
 
 ```javascript
 let n = 2;
@@ -277,7 +277,7 @@ alert( 2 * counter++ ); // 2, because counter++ returns the "old" value
 
 ### Bitwise operators
 
-Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation.
+**Bitwise operators treat arguments as 32-bit integer numbers and work on the level of their binary representation**.
 
 These operators are not JavaScript-specific. They are supported in most programming languages.
 
@@ -309,7 +309,7 @@ Here, the first expression `1 + 2` is evaluated and its result is thrown away. T
 
 **Comma has a very low precedence**
 
-Please note that the comma operator has very low precedence, lower than `=`, so parentheses are important in the example above.
+**Please note that the comma operator has very low precedence, lower than `=`**, so parentheses are important in the example above.
 
 Without them: `a = 1 + 2, 3 + 4` evaluates `+` first, summing the numbers into `a = 3, 7`, then the assignment operator `=` assigns `a = 3`, and the rest is ignored. It’s like `(a = 1 + 2), 3 + 4`.
 
