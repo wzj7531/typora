@@ -126,3 +126,92 @@ On the other hand, it’s independently called every time when `text` is missing
 
 **Alternative default parameters**
 
+We can check if the parameter is passed during the function execution, by comparing it with `undefined`:
+
+```javascript
+function showMessage(text) {
+  // ...
+
+  if (text === undefined) { // if the parameter is missing
+    text = 'empty message';
+  }
+
+  alert(text);
+}
+
+showMessage(); // empty message
+```
+
+…Or we could use the `||` operator:
+
+```javascript
+function showMessage(text) {
+  // if text is undefined or otherwise falsy, set it to 'empty'
+  text = text || 'empty';
+  ...
+}
+```
+
+Modern JavaScript engines support the [nullish coalescing operator](https://javascript.info/nullish-coalescing-operator) `??`, it’s better when most falsy values, such as `0`, should be considered “normal”:
+
+```javascript
+function showCount(count) {
+  // if count is undefined or null, show "unknown"
+  alert(count ?? "unknown");
+}
+
+showCount(0); // 0
+showCount(null); // unknown
+showCount(); // unknown
+```
+
+**A function with an empty** `return` **or without it returns** `undefined`
+
+If a function does not return a value, it is the same as if it returns `undefined`:
+
+```javascript
+function doNothing() { /* empty */ }
+
+alert( doNothing() === undefined ); // true
+```
+
+An empty `return` is also the same as `return undefined`:
+
+```javascript
+function doNothing() {
+  return;
+}
+
+alert( doNothing() === undefined ); // true
+```
+
+**Never add a newline between `return` and the value**
+
+For a long expression in `return`, it might be tempting to put it on a separate line, like this:
+
+```javascript
+return
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+
+That doesn’t work, because JavaScript assumes a semicolon after `return`. That’ll work the same as:
+
+```javascript
+return;
+ (some + long + expression + or + whatever * f(a) + f(b))
+```
+
+So, it effectively becomes an empty return.
+
+If we want the returned expression to wrap across multiple lines, we should start it at the same line as `return`. Or at least put the opening parentheses there as follows:
+
+```javascript
+return (
+  some + long + expression
+  + or +
+  whatever * f(a) + f(b)
+  )
+```
+
+And it will work just as we expect it to.
+
